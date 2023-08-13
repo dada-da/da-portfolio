@@ -1,38 +1,24 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import { Container, Box, Heading } from '@chakra-ui/react';
 
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import WorkExperience from '@/components/WorkExperience';
-import SkillSection from '@/components/SkillSection';
+type Props = {};
 
-const Home: NextPage = () => {
+const Page = (props: Props) => {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0">
-      <Head>
-        <title>Da&apos; portfolio</title>
-      </Head>
-
-      <Header />
-
-      <section id="hero" className="snap-start">
-        <Hero />
-      </section>
-
-      <section id="about" className="snap-center">
-        <About />
-      </section>
-
-      <section id="experience" className="snap-center">
-        <WorkExperience />
-      </section>
-
-      <section id="skills" className="snap-start">
-        <SkillSection />
-      </section>
-    </div>
+    <Container>
+      <Box borderRadius="lg" bg="red" p={3} mb={6} textAlign="center">
+        Hello I'm Web developer base in Hanoi!
+      </Box>
+      <Box display={{ md: 'flex' }}>
+        <Box flexGrow={1}>
+          <Heading as="h2" variant="page-title">
+            Da-da
+          </Heading>
+          <p>Front-end developer</p>
+        </Box>
+      </Box>
+    </Container>
   );
 };
 
-export default Home;
+export default Page;
