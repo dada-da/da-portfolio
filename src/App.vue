@@ -1,7 +1,9 @@
 <template>
-  <Main />
+  <ConfigProvider>
+    <RouterView />
+  </ConfigProvider>
 </template>
 
 <script setup lang="ts">
-import Main from './layouts/Main.vue'
+import { ConfigProvider } from 'ant-design-vue';
 </script>

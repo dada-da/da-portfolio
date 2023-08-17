@@ -1,11 +1,3 @@
-<template>
-  <NLayout>
-    <NLayoutContent>
-      <div>test</div>
-    </NLayoutContent>
-  </NLayout>
-</template>
+<template></template>
 
-<script setup lang="ts">
-import { NLayout, NLayoutContent } from 'naive-ui'
-</script>
+<script setup lang="ts"></script>
