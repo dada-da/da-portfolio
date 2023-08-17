@@ -1,5 +1,5 @@
 <template>
-  <Layout class="bg-[#202023] h-screen">
+  <Layout>
     <LayoutHeader />
   </Layout>
 </template>

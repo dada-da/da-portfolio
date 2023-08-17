@@ -1,6 +1,6 @@
 <template>
-  <Header :class="['fixed', 'w-screen', prefixCls]">
-    <Menu :class="prefixCls" mode="horizontal">
+  <Header class="fixed w-screen" :prefix-cls="prefixCls">
+    <Menu class="text-white bg-[#202023] flex items-center justify-center" mode="horizontal">
       <MenuItem> About </MenuItem>
       <MenuItem> Works </MenuItem>
       <MenuItem> Posts </MenuItem>
@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Layout, Menu, MenuItem, MenuProps } from 'ant-design-vue';
+import { Layout, Menu, MenuItem } from 'ant-design-vue';
 
 import { prefixCls } from '/@/design';
 export default defineComponent({

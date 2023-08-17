@@ -1,7 +1,8 @@
-$header-prefix-cls: #{$namespace}-ant-layout;
+@import '/src/design/var.scss';
 
-.#{$header-prefix-cls} {
-  .#{$header-prefix-cls}-menu {
+.#{$namespace}-ant-layout {
+  .ant-layout-header {
     background-color: #202023;
+    padding-inline: 0;
   }
 }
