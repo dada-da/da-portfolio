@@ -1,9 +1,11 @@
 <template>
-  <Layout> </Layout>
+  <Layout class="bg-[#202023] h-screen">
+    <LayoutHeader />
+  </Layout>
 </template>
 
-<srcipt lang="ts">
-import { defineComponent, computed, unref } from 'vue';
-
+<script lang="ts" setup>
 import { Layout } from 'ant-design-vue';
-</srcipt>
+
+import LayoutHeader from './header/index.vue';
+</script>

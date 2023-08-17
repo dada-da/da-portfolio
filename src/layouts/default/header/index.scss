@@ -1,0 +1,7 @@
+$header-prefix-cls: #{$namespace}-ant-layout;
+
+.#{$header-prefix-cls} {
+  .#{$header-prefix-cls}-menu {
+    background-color: #202023;
+  }
+}
