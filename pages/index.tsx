@@ -1,11 +1,19 @@
-import type { NextPage } from 'next';
-import Header from '../src/layout/Header';
+import { Router } from 'next/router';
 
-const Home: NextPage = () => {
+import { Hero } from '@/components/hero';
+import { Header } from '@/layout/header';
+import Container from '@mui/material/Container';
+
+type Props = {
+  router: Router;
+};
+
+const Home = ({ router }: Props) => {
   return (
-    <main>
-      <Header />
-    </main>
+    <Container component="main" maxWidth="md">
+      <Header path={router.asPath} />
+      <Hero />
+    </Container>
   );
 };
 

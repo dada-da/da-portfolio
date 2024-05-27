@@ -1,6 +1,3 @@
-import { purple } from '@mui/material/colors';
-import { yellow } from '@mui/material/colors';
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -13,14 +10,13 @@ module.exports = {
       padding: {
         DEFAULT: '16px',
         md: '24px',
-        xl: '80px',
       },
     },
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#81e6d9',
-          hover: '#319795',
+          DEFAULT: '#88CCCA',
+          hover: '#4fd1c5',
         },
         yellow: {
           DEFAULT: '#fbd38d',
@@ -34,7 +30,14 @@ module.exports = {
           DEFAULT: '#121212',
           500: '#8a8a8a',
           700: '#505050',
-          800: '#323232',
+          800: '#151515',
+        },
+        grey: {
+          DEFAULT: '#484848',
+          200: '#B4B4B4',
+        },
+        red: {
+          DEFAULT: '#CC888A',
         },
       },
     },

@@ -4,18 +4,23 @@ import { EmotionCache } from '@emotion/react';
 import { AppProps } from 'next/app';
 
 import '../src/styles/globals.css';
-import PageProvider from '../src/components/helpers/PageProvider';
+import PageProvider from '../src/components/helpers/pageProvider';
 
 export interface MUIAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
 
-const App: FC<MUIAppProps> = ({ Component, pageProps, emotionCache }) => (
+const App: FC<MUIAppProps> = ({
+  Component,
+  pageProps,
+  emotionCache,
+  router,
+}) => (
   <PageProvider emotionCache={emotionCache}>
     <Head>
       <title>Da&apos;s portfolio</title>
     </Head>
-    <Component {...pageProps} />
+    <Component {...pageProps} router={router} />
   </PageProvider>
 );
 
