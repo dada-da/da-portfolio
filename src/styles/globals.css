@@ -2,12 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .linkItem {
-    @apply py-1 px-3 rounded-full text-sm;
+@layer base {
+  :root {
+    --primary: #88ccca;
+    --primary-hover: #75afac;
+    --background: #f1e7db;
+    --black: #0b152e;
+    --grey: #484848;
+    --grey-disabled: #b4b4b4;
+    --content: #1a202c;
+    --highlight: #384688;
+  }
 
-    &.active {
-      @apply text-black bg-primary;
-    }
+  .dark {
+    --primary: #88ccca;
+    --primary-hover: #75afac;
+    --background: #202023;
+    --black: #151515;
+    --grey: #484848;
+    --grey-disabled: #b4b4b4;
+    --content: #eeeeee;
+    --highlight: #384688;
+  }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
   }
 }
