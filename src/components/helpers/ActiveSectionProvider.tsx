@@ -1,4 +1,11 @@
-import React, { createContext, useContext, useState } from 'react';
+'use client';
+
+import React, {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useState,
+} from 'react';
 
 import type { SectionName } from '@/lib/types';
 
@@ -13,16 +20,22 @@ export const ActiveSectionContext = createContext<TActiveSectionContext | null>(
   null
 );
 
-export const useActiveSectionProvider = () => {
+export const ActiveSectionProvider = ({ children }: PropsWithChildren) => {
   const [activeSection, setActiveSection] = useState<SectionName>('Home');
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
 
-  return {
-    activeSection,
-    setActiveSection,
-    timeOfLastClick,
-    setTimeOfLastClick,
-  };
+  return (
+    <ActiveSectionContext.Provider
+      value={{
+        activeSection,
+        setActiveSection,
+        timeOfLastClick,
+        setTimeOfLastClick,
+      }}
+    >
+      {children}
+    </ActiveSectionContext.Provider>
+  );
 };
 
 export const useActiveSection = () => {

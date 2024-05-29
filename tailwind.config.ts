@@ -1,46 +1,46 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss';
+
+const config = {
+  darkMode: ['class'],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
+  prefix: '',
   theme: {
+    fontFamily: {
+      sans: ['var(--font-sans)'],
+    },
     container: {
       center: true,
-      padding: {
-        DEFAULT: '16px',
-        md: '24px',
+      padding: '2rem',
+      screens: {
+        '2xl': '1200px',
       },
     },
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#88CCCA',
-          hover: '#4fd1c5',
-        },
-        yellow: {
-          DEFAULT: '#fbd38d',
-          hover: '#F6AD55',
-        },
-        purple: {
-          DEFAULT: '#af52bf',
-          hover: '#9c27b0',
-        },
-        black: {
-          DEFAULT: '#121212',
-          500: '#8a8a8a',
-          700: '#505050',
-          800: '#151515',
+          DEFAULT: 'var(--primary)',
+          hover: 'var(--primary-hover)',
         },
         grey: {
-          DEFAULT: '#484848',
-          200: '#B4B4B4',
+          DEFAULT: 'var(--grey)',
+          disabled: 'var(--grey-disabled)',
         },
-        red: {
-          DEFAULT: '#CC888A',
+        black: {
+          DEFAULT: 'var(--black)',
         },
+        background: 'var(--background)',
+        overlay: 'var(--background-overlay)',
+        content: 'var(--content)',
+        highlight: 'var(--highlight)',
       },
     },
   },
-  plugins: [],
-};
+  plugins: [require('tailwindcss-animate')],
+} satisfies Config;
+
+export default config;

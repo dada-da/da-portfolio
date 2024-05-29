@@ -7,6 +7,7 @@
     --primary: #88ccca;
     --primary-hover: #75afac;
     --background: #f1e7db;
+    --background-overlay: #f1e7db80;
     --black: #0b152e;
     --grey: #484848;
     --grey-disabled: #b4b4b4;
@@ -18,10 +19,11 @@
     --primary: #88ccca;
     --primary-hover: #75afac;
     --background: #202023;
+    --background-overlay: #20202380;
     --black: #151515;
     --grey: #484848;
     --grey-disabled: #b4b4b4;
-    --content: #eeeeee;
+    --content: #ededee;
     --highlight: #384688;
   }
 }
@@ -29,5 +31,15 @@
 @layer base {
   html {
     @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-content;
+  }
+}
+
+@layer components {
+  .link-hover {
+    @apply underline underline-offset-[3px] decoration-2;
   }
 }

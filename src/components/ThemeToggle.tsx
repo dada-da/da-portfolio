@@ -1,34 +1,21 @@
-import { FC, useEffect, useState } from 'react';
+'use client';
+
 import { IconButton } from '@mui/material';
 import { useTheme } from 'next-themes';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-const ThemeToggle: FC<{}> = () => {
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return <div></div>;
+export const ThemeToggle = () => {
+  const { theme, setTheme } = useTheme();
 
   return (
     <IconButton
-      className={`h-8 !w-8 ${
-        resolvedTheme === 'light'
-          ? 'bg-purple hover:bg-purple-hover'
-          : 'bg-yellow hover:bg-yellow-hover'
-      }`}
-      onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+      className="fixed bottom-5 right-5 hidden sm:bottom-8 sm:right-8 sm:flex"
+      aria-label="theme toggle"
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      {resolvedTheme === 'light' ? (
-        <DarkModeIcon className="text-xl text-black" />
-      ) : (
-        <LightModeIcon className="text-xl text-white" />
-      )}
+      <DarkModeIcon className="size-5 dark:hidden" />
+      <LightModeIcon className="hidden size-5 dark:block" />
     </IconButton>
   );
 };
-
-export default ThemeToggle;
