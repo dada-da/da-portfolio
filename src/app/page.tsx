@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { SectionDivider } from '@/components/SectionDivider';
 import { Header } from '@/layout/Header';
-import { Hero } from '@/components/Hero';
+import { Hero } from '@/components/HeroSection';
 import { About } from '@/components/About';
 
 export const metadata: Metadata = {

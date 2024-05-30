@@ -11,7 +11,7 @@ const config = {
   prefix: '',
   theme: {
     fontFamily: {
-      sans: ['var(--font-sans)'],
+      sans: ['var(--font-mplus)'],
     },
     container: {
       center: true,
