@@ -2,9 +2,15 @@
 
 import { motion } from 'framer-motion';
 
+import { useSectionInView } from '@/hooks/useSectionInView';
+import { Skills } from './Skills';
+
 export const About = () => {
+  const { ref } = useSectionInView('About');
+
   return (
     <motion.section
+      ref={ref}
       id="about"
       className="my-10 flex w-full scroll-mt-28 flex-col gap-10 items-center"
       initial={{ opacity: 0, y: 100 }}
@@ -20,7 +26,7 @@ export const About = () => {
           Security as a web developer, I&apos;m strongly driven to advance my
           skills to become a senior developer and realize my career goal to be a
           software architect. In addition to being passionate to learn about and
-          use new knownledge and technology, I always position myself in the
+          use new knowledge and technology, I always position myself in the
           shoes of end users and seek out the best solutions for them. My focus
           is on creating products for users rather than just making code work.
         </p>
@@ -30,6 +36,7 @@ export const About = () => {
           experience then don&apos;t hesitate to contact me.
         </p>
       </div>
+      <Skills />
     </motion.section>
   );
 };

@@ -7,7 +7,7 @@ import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: "Da's porfolio",
   description: 'Welcome to Next.js',
 };
 

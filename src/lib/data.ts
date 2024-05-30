@@ -20,3 +20,16 @@ export const links = [
     href: '#skill',
   },
 ] as const;
+
+export const skillIcons = [
+  'html',
+  'css',
+  'javascript',
+  'typescript',
+  'nextjs',
+  'react',
+  'vue',
+  'java',
+  'spring',
+  'jira',
+];

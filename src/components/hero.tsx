@@ -5,9 +5,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TelegramIcon from '@mui/icons-material/Telegram';
 
+import { useSectionInView } from '@/hooks/useSectionInView';
+
 export const Hero = () => {
+  const { ref } = useSectionInView('Home');
+
   return (
-    <section id="home" className="py-10 scroll-mt-96">
+    <section ref={ref} id="home" className="py-10 scroll-mt-96">
       <div className="flex flex-col items-center gap-4">
         <motion.a
           initial={{ opacity: 0, scale: 0 }}
@@ -48,9 +52,29 @@ export const Hero = () => {
           }}
           className="flex items-center justify-center gap-2"
         >
-          <LinkedInIcon />
-          <GitHubIcon />
-          <TelegramIcon />
+          <a
+            href="www.linkedin.com/in/dada777"
+            target="_blank"
+            className="icon-link"
+          >
+            <LinkedInIcon />
+          </a>
+          <a
+            href="https://github.com/dada-da"
+            className="icon-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GitHubIcon />
+          </a>
+          <a
+            href="https://t.me/dada_daad"
+            target="_blank"
+            className="icon-link"
+            rel="noreferrer"
+          >
+            <TelegramIcon />
+          </a>
         </motion.div>
       </div>
     </section>

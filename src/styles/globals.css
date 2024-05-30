@@ -10,8 +10,8 @@
     --background-overlay: #f1e7db80;
     --background-revert: #202023;
     --black: #0b152e;
-    --grey: #484848;
-    --grey-disabled: #b4b4b4;
+    --grey: #f6f0e8;
+    --grey-disabled: #d5d0c8;
     --content: #1a202c;
     --content-revert: #ededee;
     --highlight: #384688;
@@ -24,8 +24,8 @@
     --background-overlay: #20202380;
     --background-revert: #f1e7db;
     --black: #151515;
-    --grey: #484848;
-    --grey-disabled: #b4b4b4;
+    --grey: #525252;
+    --grey-disabled: #323234;
     --content: #ededee;
     --content-revert: #1a202c;
     --highlight: #384688;
@@ -49,5 +49,9 @@
 
   .button {
     @apply px-4 py-2 text-black bg-shade-revert flex items-center gap-2 bg-primary w-fit rounded text-sm font-semibold hover:bg-primary-hover;
+  }
+
+  .icon-link {
+    @apply rounded-full bg-grey-disabled p-2 hover:bg-grey;
   }
 }
