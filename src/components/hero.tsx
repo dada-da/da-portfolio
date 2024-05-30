@@ -1,14 +1,14 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-
-import profilePic from '../../public/ava-img.jpg';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 export const Hero = () => {
   return (
     <section id="home" className="py-10 scroll-mt-96">
-      <div className="flex flex-col items-center text-center gap-4">
+      <div className="flex flex-col items-center gap-4">
         <motion.a
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -17,10 +17,10 @@ export const Hero = () => {
             duration: 0.2,
           }}
           href="https://github.com/Skolaczk/next-starter"
-          className="bg-primary w-fit text-black rounded px-3 py-2 text-sm font-semibold hover:bg-primary-hover"
+          className="button"
         >
           🎉
-          <span className="ml-3">Check out my CV</span>
+          <span>Check out my CV</span>
         </motion.a>
         <motion.h1
           initial={{ opacity: 0, y: 100 }}
@@ -35,20 +35,24 @@ export const Hero = () => {
           transition={{
             delay: 0.1,
           }}
-          className="text-muted-foreground max-w-md"
+          className="max-w-md indent-4"
         >
           Hello, I&apos;m Da. I am front-end developer from Hanoi. I enjoy
           building sites and apps. My focus is React (Next.js).
         </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.1,
+          }}
+          className="flex items-center justify-center gap-2"
+        >
+          <LinkedInIcon />
+          <GitHubIcon />
+          <TelegramIcon />
+        </motion.div>
       </div>
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
-        className="flex flex-row gap-2"
-      ></motion.div>
     </section>
   );
 };

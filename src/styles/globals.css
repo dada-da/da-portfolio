@@ -8,10 +8,12 @@
     --primary-hover: #75afac;
     --background: #f1e7db;
     --background-overlay: #f1e7db80;
+    --background-revert: #202023;
     --black: #0b152e;
     --grey: #484848;
     --grey-disabled: #b4b4b4;
     --content: #1a202c;
+    --content-revert: #ededee;
     --highlight: #384688;
   }
 
@@ -20,10 +22,12 @@
     --primary-hover: #75afac;
     --background: #202023;
     --background-overlay: #20202380;
+    --background-revert: #f1e7db;
     --black: #151515;
     --grey: #484848;
     --grey-disabled: #b4b4b4;
     --content: #ededee;
+    --content-revert: #1a202c;
     --highlight: #384688;
   }
 }
@@ -34,12 +38,16 @@
   }
 
   body {
-    @apply bg-background text-content;
+    @apply bg-shade text-content tracking-[0.2px] leading-6;
   }
 }
 
 @layer components {
   .link-hover {
     @apply underline underline-offset-[3px] decoration-2;
+  }
+
+  .button {
+    @apply px-4 py-2 text-black bg-shade-revert flex items-center gap-2 bg-primary w-fit rounded text-sm font-semibold hover:bg-primary-hover;
   }
 }

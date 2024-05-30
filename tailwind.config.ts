@@ -33,9 +33,15 @@ const config = {
         black: {
           DEFAULT: 'var(--black)',
         },
-        background: 'var(--background)',
+        shade: {
+          DEFAULT: 'var(--background)',
+          revert: 'var(--background-revert)',
+        },
+        content: {
+          DEFAULT: 'var(--content)',
+          revert: 'var(--content-revert)',
+        },
         overlay: 'var(--background-overlay)',
-        content: 'var(--content)',
         highlight: 'var(--highlight)',
       },
     },
