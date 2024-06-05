@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 import { useSectionInView } from '@/hooks/useSectionInView';
-import { Skills } from './Skills';
+import { Skills } from '../porfolio/Skills';
 
 export const About = () => {
   const { ref } = useSectionInView('About');

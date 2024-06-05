@@ -8,16 +8,12 @@ export const links = [
     href: '#about',
   },
   {
-    name: 'Projects',
-    href: '#projects',
-  },
-  {
     name: 'Experience',
     href: '#experience',
   },
   {
-    name: 'Skill',
-    href: '#skill',
+    name: 'Projects',
+    href: '#projects',
   },
 ] as const;
 

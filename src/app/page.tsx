@@ -1,10 +1,11 @@
 import { Metadata } from 'next';
 
-import { ThemeToggle } from '@/components/ThemeToggle';
-import { SectionDivider } from '@/components/SectionDivider';
+import { ThemeToggle } from '@/components/common/ThemeToggle';
+import { SectionDivider } from '@/components/porfolio/SectionDivider';
 import { Header } from '@/layout/Header';
-import { Hero } from '@/components/HeroSection';
-import { About } from '@/components/About';
+import { Hero } from '@/components/porfolio/Hero';
+import { About } from '@/components/porfolio/About';
+import { Experience } from '@/components/porfolio/Experience';
 
 export const metadata: Metadata = {
   title: "Da's porfolio",
@@ -19,6 +20,7 @@ const Home = () => {
         <Hero />
         <SectionDivider />
         <About />
+        <Experience />
       </div>
       <ThemeToggle />
     </>

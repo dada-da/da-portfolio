@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -8,7 +7,6 @@ import { useActiveSection } from '@/components/helpers/ActiveSectionProvider';
 import { links } from '@/lib/data';
 
 export const Header = () => {
-  const [open, setOpen] = useState(false);
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSection();
 

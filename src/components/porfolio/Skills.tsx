@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import { Icons } from '@/components/Icons';
+import { Icons } from '@/components/porfolio/Icons';
 import { skillIcons } from '@/lib/data';
 
 const fadeInAnimationVariants = {
@@ -19,7 +19,7 @@ const fadeInAnimationVariants = {
 
 export const Skills = () => {
   return (
-    <div className="flex gap-10 w-full justify-between items-center">
+    <div className="flex gap-10 w-full flex-wrap justify-between items-center">
       {skillIcons.map((icon, index) => (
         <motion.div
           key={index + icon}
