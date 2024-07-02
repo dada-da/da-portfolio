@@ -20,7 +20,7 @@ export const About = () => {
       <h2 className="text-3xl font-bold leading-tight tracking-tighter sm:text-4xl">
         About Me
       </h2>
-      <div className="-mt-5 max-w-2xl text-center leading-7">
+      <div className="max-w-3xl text-center leading-7">
         <p className="mb-4">
           With two years of experience working for the Ministry of Public
           Security as a web developer, I&apos;m strongly driven to advance my

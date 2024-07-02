@@ -3,65 +3,62 @@
 import React from 'react';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-
 import { useSectionInView } from '@/hooks/useSectionInView';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+
+import { experiencesData } from '@/lib/data';
 
 const AlternateTimeline = () => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   return (
-    <Timeline className="p-0" position="alternate">
-      <TimelineItem>
-        <TimelineOppositeContent className="pb-0 px-4 pt-4">
-          2021 - Presents
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector className="h-4" />
-          <div className="bg-content rounded-full my-4 hidden w-10 h-10 relative lg:w-20 lg:h-20 lg:block">
-            <Image
-              src="/etc-logo.png"
-              alt="etc"
-              fill
-              style={{
-                objectFit: 'cover',
-              }}
-            />
-          </div>
-          <TimelineConnector className="h-40" />
-        </TimelineSeparator>
-        <TimelineContent className="pb-0 px-4 pt-4">Eat</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Code</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Sleep</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-        </TimelineSeparator>
-        <TimelineContent>Repeat</TimelineContent>
-      </TimelineItem>
-    </Timeline>
+    <VerticalTimeline lineColor="text-red">
+      {experiencesData.map(({ title, description, duration, logo }) => (
+        <VerticalTimelineElement
+          key={title}
+          visible={inView}
+          contentStyle={{
+            background: 'transparent',
+            boxShadow: 'none',
+            padding: '20px',
+          }}
+          contentArrowStyle={{ display: 'none' }}
+          date={duration}
+          dateClassName="!font-medium"
+          icon={
+            <div className="bg-content rounded-full hidden w-15 h-15 relative lg:block">
+              <Image
+                src={logo}
+                alt="etc"
+                fill
+                style={{
+                  objectFit: 'cover',
+                }}
+              />
+            </div>
+          }
+          iconStyle={{
+            boxShadow: 'none',
+            border: '2px solid',
+          }}
+        >
+          <h3 ref={ref} className="font-medium">
+            {title}
+          </h3>
+          <p className="text-muted-foreground !mt-1 !font-normal">
+            {description}
+          </p>
+        </VerticalTimelineElement>
+      ))}
+    </VerticalTimeline>
   );
 };
 
 export const Experience = () => {
-  const { ref, inView } = useInView({ triggerOnce: true });
   const { ref: sectionRef } = useSectionInView('Experience');
 
   return (

@@ -44,6 +44,12 @@ const config = {
         overlay: 'var(--background-overlay)',
         highlight: 'var(--highlight)',
       },
+      width: {
+        15: '3.75rem' /* 60px */,
+      },
+      height: {
+        15: '3.75rem' /* 60px */,
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
