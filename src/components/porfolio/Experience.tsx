@@ -39,6 +39,7 @@ const AlternateTimeline = () => {
                 style={{
                   objectFit: 'cover',
                 }}
+                sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 5vw"
               />
             </div>
           }

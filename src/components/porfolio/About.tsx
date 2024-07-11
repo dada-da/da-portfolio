@@ -22,13 +22,16 @@ export const About = () => {
       </h2>
       <div className="max-w-3xl text-center leading-7">
         <p className="mb-4">
-          With two years of experience working for the Ministry of Public
-          Security as a web developer, I&apos;m strongly driven to advance my
-          skills to become a senior developer and realize my career goal to be a
-          software architect. In addition to being passionate to learn about and
-          use new knowledge and technology, I always position myself in the
-          shoes of end users and seek out the best solutions for them. My focus
-          is on creating products for users rather than just making code work.
+          Experienced Middle Developer specializing in TypeScript, Vue, and
+          JavaScript. Proficient in designing and implementing robust and
+          user-friendly web applications. Passionate about staying up-to-date
+          with the latest industry trends and technologies. Strong
+          problem-solving skills, with a focus on creating efficient and elegant
+          solutions. My in-depth understanding of Object-Oriented Programming
+          (OOP) principles and SOLID design principles underscores my dedication
+          to crafting clean, modular, and maintainable codebases. Committed to
+          collaborating with cross-functional teams to deliver high-quality
+          software products.
         </p>
         <p>
           I&apos;m open to Job opportunities where I can contribute, learn and
