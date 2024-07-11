@@ -30,7 +30,7 @@ const AlternateTimeline = () => {
           date={duration}
           dateClassName="!font-medium"
           icon={
-            <div className="bg-white rounded-full overflow-hidden hidden w-15 h-15 relative lg:block">
+            <div className="bg-white rounded-full overflow-hidden h-10 w-10 lg:w-15 lg:h-15 relative lg:block">
               <Image
                 className="p-1"
                 src={logo}

@@ -19,7 +19,7 @@ const fadeInAnimationVariants = {
 
 export const Skills = () => {
   return (
-    <div className="flex gap-8 w-full flex-wrap items-center lg:justify-between">
+    <div className="flex gap-4 flex-wrap justify-between items-center md:gap-8">
       {skillIcons.map((icon, index) => (
         <motion.div
           key={index + icon}

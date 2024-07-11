@@ -16,7 +16,7 @@ export const Header = () => {
       animate={{ y: 0, opacity: 1 }}
       className="bg-overlay sticky py-5 top-0 z-20 flex justify-center items-center gap-2 backdrop-blur-sm"
     >
-      <nav className="hidden text-sm sm:block">
+      <nav className="text-sm">
         <ul className="flex gap-5">
           {links.map(({ name, href }) => (
             <li key={name}>
