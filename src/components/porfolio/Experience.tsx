@@ -16,13 +16,13 @@ const AlternateTimeline = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
-    <VerticalTimeline lineColor="text-red">
+    <VerticalTimeline lineColor="var(--grey)">
       {experiencesData.map(({ title, description, duration, logo }) => (
         <VerticalTimelineElement
           key={title}
           visible={inView}
           contentStyle={{
-            background: 'transparent',
+            background: 'var(--grey-disabled)',
             boxShadow: 'none',
             padding: '20px',
           }}
@@ -30,8 +30,9 @@ const AlternateTimeline = () => {
           date={duration}
           dateClassName="!font-medium"
           icon={
-            <div className="bg-content rounded-full hidden w-15 h-15 relative lg:block">
+            <div className="bg-white rounded-full overflow-hidden hidden w-15 h-15 relative lg:block">
               <Image
+                className="p-1"
                 src={logo}
                 alt="etc"
                 fill
@@ -42,8 +43,8 @@ const AlternateTimeline = () => {
             </div>
           }
           iconStyle={{
-            boxShadow: 'none',
-            border: '2px solid',
+            boxShadow: 'none!important',
+            border: 'none!important',
           }}
         >
           <h3 ref={ref} className="font-medium">

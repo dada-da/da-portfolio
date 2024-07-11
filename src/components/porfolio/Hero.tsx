@@ -20,7 +20,8 @@ export const Hero = () => {
             type: 'tween',
             duration: 0.2,
           }}
-          href="https://github.com/Skolaczk/next-starter"
+          href="https://drive.google.com/file/d/1lFHdP0_AC6951T3TRiTWWcg0ZNg-hnsq/view?usp=sharing"
+          target="_blank"
           className="button"
         >
           🎉
@@ -53,7 +54,7 @@ export const Hero = () => {
           className="flex items-center justify-center gap-2"
         >
           <a
-            href="www.linkedin.com/in/dada777"
+            href="https://linkedin.com/in/dada777"
             target="_blank"
             className="icon-link"
           >

@@ -30,7 +30,6 @@ export const Skills = () => {
             once: true,
           }}
           custom={index}
-          title={icon}
         >
           <Icons icon={icon} className="size-12" />
         </motion.div>
