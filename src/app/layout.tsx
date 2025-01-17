@@ -1,17 +1,26 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren } from "react";
 
-import { ActiveSectionProvider } from '@/components/helpers/ActiveSectionProvider';
-import { ThemeProvider } from '@/components/helpers/ThemeProvider';
-
-import { fontsMplus } from '@/lib/fonts';
-import '../styles/globals.css';
+import { fontsMplus } from "@/lib/fonts";
+import { ActiveSectionProvider } from "@/components/helpers/ActiveSectionProvider";
+import { ThemeProvider } from "@/components/helpers/ThemeProvider";
+import ThemeToggle from "@/components/common/ThemeToggle";
+import Header from "@/layout/Header";
+import "../styles/globals.css";
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <html lang="en" className={`${fontsMplus.variable}`}>
+    <html
+      lang="en"
+      className={`${fontsMplus.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         <ThemeProvider attribute="class">
-          <ActiveSectionProvider>{children}</ActiveSectionProvider>
+          <ActiveSectionProvider>
+            <Header />
+            {children}
+            <ThemeToggle />
+          </ActiveSectionProvider>
         </ThemeProvider>
       </body>
     </html>

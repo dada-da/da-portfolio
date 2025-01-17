@@ -1,42 +1,58 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { motion } from "framer-motion";
+import { useRouter, useSelectedLayoutSegment } from "next/navigation";
+import Link from "next/link";
 
-import { useActiveSection } from '@/components/helpers/ActiveSectionProvider';
-import { links } from '@/lib/data';
+import { useActiveSection } from "@/components/helpers/ActiveSectionProvider";
+import { links } from "@/lib/data";
 
-export const Header = () => {
+const Header = () => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSection();
+  const router = useRouter();
+  const segment = useSelectedLayoutSegment();
+
+  const isHomepage = !segment;
+
+  const linkActiveClass = (name: string, link: string): string => {
+    if (isHomepage) {
+      return name === activeSection ? "text-black" : "";
+    } else return link.includes(segment) ? "text-black bg-primary" : "";
+  };
+
+  const handleClickLink = (name: string, link: string, isAnchor: boolean) => {
+    if (isAnchor) {
+      setActiveSection(name);
+      setTimeOfLastClick(Date.now());
+    } else {
+      router.push(link);
+    }
+  };
 
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       className="bg-overlay sticky py-5 top-0 z-20 flex justify-center items-center gap-2 backdrop-blur-sm"
     >
       <nav className="text-sm">
         <ul className="flex gap-5">
-          {links.map(({ name, href }) => (
+          {links.map(({ name, href, isAnchor }) => (
             <li key={name}>
               <Link
                 href={href}
-                className={`hover:link-hover relative px-4 py-2 transition-colors ${
-                  name === activeSection ? 'text-black' : ''
-                }`}
-                onClick={() => {
-                  setActiveSection(name);
-                  setTimeOfLastClick(Date.now());
-                }}
+                className={`relative px-4 py-2 transition-colors hover:link-hover ${linkActiveClass(name, href)}`}
+                onClick={() => handleClickLink(name, href, isAnchor)}
               >
                 {name}
-                {name === activeSection && (
+                {name === activeSection && isHomepage && (
                   <motion.span
                     className="bg-primary absolute inset-0 -z-10"
                     layoutId="activeSection"
                     transition={{
-                      type: 'spring',
+                      type: "spring",
                       stiffness: 380,
                       damping: 30,
                     }}
@@ -50,3 +66,5 @@ export const Header = () => {
     </motion.header>
   );
 };
+
+export default Header;

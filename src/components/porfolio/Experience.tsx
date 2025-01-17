@@ -1,32 +1,35 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import { useInView } from 'react-intersection-observer';
-import { useSectionInView } from '@/hooks/useSectionInView';
+import React, { useRef } from "react";
+
+import Image from "next/image";
+import { useInView } from "motion/react";
+import { useSectionInView } from "@/hooks/useSectionInView";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
-import { experiencesData } from '@/lib/data';
+import { experiencesData } from "@/lib/data";
 
 const AlternateTimeline = () => {
-  const { ref, inView } = useInView({ triggerOnce: true });
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   return (
     <VerticalTimeline lineColor="var(--grey)">
       {experiencesData.map(({ title, description, duration, logo }) => (
         <VerticalTimelineElement
+          ref={ref}
           key={title}
-          visible={inView}
+          visible={isInView}
           contentStyle={{
-            background: 'var(--grey-disabled)',
-            boxShadow: 'none',
-            padding: '20px',
+            background: "var(--grey-disabled)",
+            boxShadow: "none",
+            padding: "20px",
           }}
-          contentArrowStyle={{ display: 'none' }}
+          contentArrowStyle={{ display: "none" }}
           date={duration}
           dateClassName="!font-medium"
           icon={
@@ -37,15 +40,15 @@ const AlternateTimeline = () => {
                 alt="etc"
                 fill
                 style={{
-                  objectFit: 'cover',
+                  objectFit: "cover",
                 }}
                 sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 5vw"
               />
             </div>
           }
           iconStyle={{
-            boxShadow: 'none!important',
-            border: 'none!important',
+            boxShadow: "none!important",
+            border: "none!important",
           }}
         >
           <h3 ref={ref} className="font-medium">
@@ -61,7 +64,7 @@ const AlternateTimeline = () => {
 };
 
 export const Experience = () => {
-  const { ref: sectionRef } = useSectionInView('Experience');
+  const { ref: sectionRef } = useSectionInView("Experience");
 
   return (
     <section ref={sectionRef} id="experience">

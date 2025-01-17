@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
 import React, {
   createContext,
   PropsWithChildren,
   useContext,
   useState,
-} from 'react';
+} from "react";
 
-import type { SectionName } from '@/lib/types';
+import type { SectionName } from "@/lib/types";
 
 type TActiveSectionContext = {
   activeSection: SectionName;
@@ -17,11 +17,11 @@ type TActiveSectionContext = {
 };
 
 export const ActiveSectionContext = createContext<TActiveSectionContext | null>(
-  null
+  null,
 );
 
 export const ActiveSectionProvider = ({ children }: PropsWithChildren) => {
-  const [activeSection, setActiveSection] = useState<SectionName>('Home');
+  const [activeSection, setActiveSection] = useState<SectionName>("Home");
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
 
   return (
@@ -43,7 +43,7 @@ export const useActiveSection = () => {
 
   if (context === null) {
     throw new Error(
-      'useActiveSection must be used within an ActiveSectionProvider'
+      "useActiveSection must be used within an ActiveSectionProvider",
     );
   }
 

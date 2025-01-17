@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from "motion/react";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -20,6 +20,7 @@ export const Hero = () => {
             type: 'tween',
             duration: 0.2,
           }}
+          viewport={{ once: true }}
           href="https://drive.google.com/file/d/1lFHdP0_AC6951T3TRiTWWcg0ZNg-hnsq/view?usp=sharing"
           target="_blank"
           className="button"
@@ -51,6 +52,7 @@ export const Hero = () => {
           transition={{
             delay: 0.1,
           }}
+          viewport={{ once: true }}
           className="flex items-center justify-center gap-2"
         >
           <a
