@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+#codeeditor
+/.idea/
+/.vscode/
+
 # next.js
 /.next/
 /out/
