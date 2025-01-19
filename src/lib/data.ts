@@ -18,7 +18,7 @@ export interface IHeaderMenu extends ICommonMenu {
 export const links: IHeaderMenu[] = [
   {
     name: "Home",
-    href: "/",
+    href: '/#home',
     isAnchor: true,
   },
   {
@@ -40,8 +40,8 @@ export const links: IHeaderMenu[] = [
 
 export const PROJECTS: ICommonMenu[] = [
   {
-    name: "Vietlot",
-    href: "/projects/vietlot",
+    name: "Vietlott",
+    href: "/projects/vietlott",
   },
 ];
 

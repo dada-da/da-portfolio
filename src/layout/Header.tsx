@@ -23,6 +23,9 @@ const Header = () => {
 
   const handleClickLink = (name: string, link: string, isAnchor: boolean) => {
     if (isAnchor) {
+      if (name === "/#home" && !isHomepage) {
+        router.push("/");
+      }
       setActiveSection(name);
       setTimeOfLastClick(Date.now());
     } else {
@@ -35,15 +38,15 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
-      className="bg-overlay sticky py-5 top-0 z-20 flex justify-center items-center gap-2 backdrop-blur-sm"
+      className="bg-overlay fixed w-full top-0 z-20 backdrop-blur-sm"
     >
       <nav className="text-sm">
-        <ul className="flex gap-5">
+        <ul className=" flex py-5 justify-center items-center gap-2 lg:gap-5">
           {links.map(({ name, href, isAnchor }) => (
             <li key={name}>
               <Link
                 href={href}
-                className={`relative px-4 py-2 transition-colors hover:link-hover ${linkActiveClass(name, href)}`}
+                className={`block relative px-4 py-2 transition-colors hover:link-hover ${linkActiveClass(name, href)}`}
                 onClick={() => handleClickLink(name, href, isAnchor)}
               >
                 {name}

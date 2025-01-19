@@ -15,10 +15,14 @@ const RootLayout = ({ children }: PropsWithChildren) => {
       suppressHydrationWarning
     >
       <body>
-        <ThemeProvider attribute="class">
+        <ThemeProvider
+          attribute="class"
+          enableSystem={false}
+          defaultTheme="dark"
+        >
           <ActiveSectionProvider>
             <Header />
-            {children}
+            <div className="pt-[76px]">{children}</div>
             <ThemeToggle />
           </ActiveSectionProvider>
         </ThemeProvider>

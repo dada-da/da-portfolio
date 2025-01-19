@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 
-import { SectionDivider } from "@/components/porfolio/SectionDivider";
 import { Hero } from "@/components/porfolio/Hero";
 import { About } from "@/components/porfolio/About";
 import { Experience } from "@/components/porfolio/Experience";
@@ -14,7 +13,6 @@ const Home = () => {
   return (
     <div className="container">
       <Hero />
-      <SectionDivider />
       <About />
       <Experience />
     </div>

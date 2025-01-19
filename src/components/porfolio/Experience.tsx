@@ -1,16 +1,15 @@
 "use client";
 
 import React, { useRef } from "react";
-
 import Image from "next/image";
 import { useInView } from "motion/react";
-import { useSectionInView } from "@/hooks/useSectionInView";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
+import { useSectionInView } from "@/hooks/useSectionInView";
 import { experiencesData } from "@/lib/data";
 
 const AlternateTimeline = () => {
@@ -33,22 +32,19 @@ const AlternateTimeline = () => {
           date={duration}
           dateClassName="!font-medium"
           icon={
-            <div className="bg-white rounded-full overflow-hidden h-10 w-10 lg:w-15 lg:h-15 relative lg:block">
-              <Image
-                className="p-1"
-                src={logo}
-                alt="etc"
-                fill
-                style={{
-                  objectFit: "cover",
-                }}
-                sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 5vw"
-              />
-            </div>
+            <Image
+              className="p-1 bg-white rounded-full"
+              src={logo}
+              alt="etc"
+              fill
+              style={{
+                objectFit: "cover",
+              }}
+              sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 5vw"
+            />
           }
           iconStyle={{
-            boxShadow: "none!important",
-            border: "none!important",
+            background: "white",
           }}
         >
           <h3 ref={ref} className="font-medium">

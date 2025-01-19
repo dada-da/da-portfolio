@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { useSectionInView } from "@/hooks/useSectionInView";
 import { Skills } from "../porfolio/Skills";
+import { SectionDivider } from "@/components/porfolio/SectionDivider";
 
 export const About = () => {
   const { ref } = useSectionInView("About");
@@ -11,11 +12,12 @@ export const About = () => {
     <motion.section
       ref={ref}
       id="about"
-      className="my-10 flex w-full scroll-mt-28 flex-col gap-10 items-center"
+      className="py-10 flex w-full scroll-mt-28 flex-col gap-10 items-center lg:py-20"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
+      <SectionDivider />
       <h2 className="text-3xl font-bold leading-tight tracking-tighter sm:text-4xl">
         About Me
       </h2>
@@ -39,6 +41,7 @@ export const About = () => {
         </p>
       </div>
       <Skills />
+      <SectionDivider />
     </motion.section>
   );
 };

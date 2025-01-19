@@ -11,7 +11,7 @@ export const Hero = () => {
   const { ref } = useSectionInView('Home');
 
   return (
-    <section ref={ref} id="home" className="py-10 scroll-mt-96">
+    <section ref={ref} id="home" className="pt-10 scroll-mt-96">
       <div className="flex flex-col items-center gap-4">
         <motion.a
           initial={{ opacity: 0, scale: 0 }}

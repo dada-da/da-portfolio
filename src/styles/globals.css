@@ -3,55 +3,73 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --primary: #88ccca;
-    --primary-hover: #75afac;
-    --background: #f1e7db;
-    --background-overlay: #f1e7db80;
-    --background-revert: #202023;
-    --black: #0b152e;
-    --grey: #f6f0e8;
-    --grey-disabled: #d5d0c8;
-    --content: #1a202c;
-    --content-revert: #ededee;
-    --highlight: #384688;
-  }
+    :root {
+        --primary: #88ccca;
+        --primary-hover: #75afac;
+        --background: #f1e7db;
+        --background-overlay: #f1e7db80;
+        --background-revert: #202023;
+        --black: #0b152e;
+        --grey: #f6f0e8;
+        --grey-disabled: #d5d0c8;
+        --content: #1a202c;
+        --content-revert: #ededee;
+        --highlight: #384688;
+    }
 
-  .dark {
-    --primary: #88ccca;
-    --primary-hover: #75afac;
-    --background: #202023;
-    --background-overlay: #20202380;
-    --background-revert: #f1e7db;
-    --black: #151515;
-    --grey: #525252;
-    --grey-disabled: #323234;
-    --content: #ededee;
-    --content-revert: #1a202c;
-    --highlight: #384688;
-  }
+    .dark {
+        --primary: #88ccca;
+        --primary-hover: #75afac;
+        --background: #202023;
+        --background-overlay: #20202380;
+        --background-revert: #f1e7db;
+        --black: #151515;
+        --grey: #525252;
+        --grey-disabled: #323234;
+        --content: #ededee;
+        --content-revert: #1a202c;
+        --highlight: #384688;
+    }
 }
 
 @layer base {
-  html {
-    @apply scroll-smooth;
-  }
+    html {
+        @apply scroll-smooth;
+    }
 
-  body {
-    @apply bg-shade text-content tracking-[0.2px] leading-6;
-  }
+    body {
+        @apply h-dvh bg-shade text-content tracking-[0.2px] leading-6;
+
+        /* Chrome, Safari, Edge, Opera */
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
 }
 
 @layer components {
-  .link-hover {
-    @apply underline underline-offset-[3px] decoration-2;
-  }
+    .link-hover {
+        @apply underline underline-offset-[3px] decoration-2;
+    }
 
-  .button {
-    @apply px-4 py-2 text-black bg-shade-revert flex items-center gap-2 bg-primary w-fit rounded text-sm font-semibold hover:bg-primary-hover;
-  }
+    .button {
+        @apply px-4 py-2 text-black flex items-center gap-2 bg-primary w-fit rounded text-sm font-semibold hover:bg-primary-hover;
+    }
 
-  .icon-link {
-    @apply rounded-full bg-grey-disabled p-2 hover:bg-grey;
-  }
+    .icon-link {
+        @apply rounded-full bg-grey-disabled p-2 hover:bg-grey;
+    }
+
+    .input {
+        @apply text-sm font-semibold py-2 bg-primary !outline-none;
+    }
 }
