@@ -1,32 +1,50 @@
 "use client";
 
-import React, { Ref, useState } from "react";
+import React, { useRef, useState } from "react";
 
 import { isNumber } from "@/util/typecheck";
 
 interface IInputProps {
-  ref: Ref<HTMLInputElement>;
-  value?: number | string;
-  setValue?: (value: number | string) => void;
+  id: string;
+  value: number | string;
+  setValue: (value: number | string) => void;
+  name?: string;
   min?: number;
   max?: number;
   className?: string;
   onInputChange?: (value: number | string) => void;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const InputNumber = (props: IInputProps) => {
-  const { value, setValue, className, min, max, ref, onInputChange } = props;
-  const [inputValue, setInputValue] = useState<number | string>(value || 0);
+  const {
+    id,
+    name,
+    value,
+    setValue,
+    className,
+    min,
+    max,
+    onInputChange,
+    onBlur,
+  } = props;
+  const ref = useRef<HTMLInputElement>(null);
+  const [inputValue, setInputValue] = useState<number | string>(value);
 
   const handleChangeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
 
     const value = handleValidate(event.target.value);
-    if (value !== undefined) {
-      setInputValue(value);
-      setValue && setValue(value);
-      onInputChange && onInputChange(value);
+    setInputValue(value);
+    if (value === "") {
+      ref.current?.focus();
     }
+    setValue(value);
+    onInputChange && onInputChange(value);
+  };
+
+  const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    onBlur && onBlur(event);
   };
 
   const handleValidate = (value: unknown): number | string => {
@@ -53,15 +71,20 @@ const InputNumber = (props: IInputProps) => {
 
   return (
     <input
+      id={`input-number-${id}`}
+      name={name}
       ref={ref}
       className={className || "input size-10 text-center"}
       type="number"
-      value={value || inputValue}
+      value={inputValue}
       min={min}
       max={max}
       onChange={(e) => {
         handleChangeValue(e);
       }}
+      onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
+        handleOnBlur(event)
+      }
     />
   );
 };
