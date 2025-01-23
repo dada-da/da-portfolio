@@ -72,4 +72,10 @@
     .input {
         @apply text-sm font-semibold py-2 bg-primary !outline-none;
     }
+
+    .radio-button-group {
+        span {
+            @apply text-content;
+        }
+    }
 }

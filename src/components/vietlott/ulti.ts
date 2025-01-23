@@ -1,10 +1,15 @@
 import { randomNumberInRange } from "@/util/number";
 
-const getRandomNumber = () => {
+export enum VietlottTypes {
+  Mega = 45,
+  Power = 55,
+}
+
+const getRandomNumber = (type: VietlottTypes) => {
   const newNumbers: number[] = [];
 
   while (newNumbers.length < 6) {
-    const randomNumber = randomNumberInRange(1, 45);
+    const randomNumber = randomNumberInRange(1, type);
     if (!newNumbers.includes(randomNumber)) {
       newNumbers.push(randomNumber);
     }
